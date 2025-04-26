@@ -25,7 +25,7 @@ class IpaymuController extends Controller
             'qty' => [$validatedData['quantity']],
             'price' => [$validatedData['price']],
             'imageUrl' => ['https://progesio.my.id/icon.png'],
-            'returnUrl' => route('ipaymu.success'),
+            'returnUrl' => route('ipaymu.success').'?atas_nama='.$request->buyerName.'&nomor='.$request->buyerPhone.'&email='.$request->buyerEmail,
             'cancelUrl' => route('ipaymu.cancel'),
             'buyerEmail' => $request->buyerEmail,
             'buyerName' => $request->buyerName,
@@ -56,7 +56,8 @@ class IpaymuController extends Controller
 
     public function success(Request $request)
     {
-        Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=HIT SUCCESSs ');
+        Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=HIT SUCCESS 1 Trnsksi ');
+        $this->notify($request);
         return view('ipaymu.success');
     }
 
@@ -69,7 +70,7 @@ class IpaymuController extends Controller
     {
 
         try{
-            Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=Terdapat Pembayaran Berhasil oleh '.$request->email .' dengan nomor WA '.$request->nomor.' dan atas nama '.$request->atas_nama);
+            Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=Terdapat Pembayaran Berhasil oleh '.$request->email .' dengan nomor WA '.$request->nomor.' dan atas nama '.$request->atas_nama.' dengan status '.$request->return);
         }catch(\Exception $e){
             Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=ada transaksi masuk tapi error ----- '.            $e->getMessage());}
 
