@@ -61,15 +61,38 @@
 </div>
 <script>
     function showPurchaseForm(product, price, quantity) {
+        if (product === 'Paket A') {
+            window.location.href = '{{ route('register') }}';
+            return;
+        }
+
+        if (product === 'Paket Dedicated') {
+            const waUrl = 'https://wa.me/6282111424592?text=' + encodeURIComponent('Saya hendak membeli paket dedicated wa blass');
+            window.location.href = waUrl;
+            return;
+        }
+
         const formHtml = `
             <div class='text-center'>
                 <h1>Welcome to Our Service</h1>
-                <p>Click the button below to proceed with the payment.</p>
+                <p>Fill in your details and click the button below to proceed with the payment.</p>
                 <form method='POST' action='{{ route('ipaymu.purchase') }}'>
                     {{ csrf_field() }}
                     <input type='hidden' name='product' value='` + product + `'>
                     <input type='hidden' name='price' value='` + price + `'>
                     <input type='hidden' name='quantity' value='` + quantity + `'>
+                    <div class='mb-3'>
+                        <label for='buyerName' class='form-label'>Name:</label>
+                        <input type='text' id='buyerName' name='buyerName' class='form-control' required>
+                    </div>
+                    <div class='mb-3'>
+                        <label for='buyerEmail' class='form-label'>Email:</label>
+                        <input type='email' id='buyerEmail' name='buyerEmail' class='form-control' required>
+                    </div>
+                    <div class='mb-3'>
+                        <label for='buyerPhone' class='form-label'>Phone Number:</label>
+                        <input type='text' id='buyerPhone' name='buyerPhone' class='form-control' required>
+                    </div>
                     <button type='submit' class='btn btn-primary'>Proceed to Payment</button>
                 </form>
             </div>

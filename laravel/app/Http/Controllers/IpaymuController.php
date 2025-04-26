@@ -27,7 +27,10 @@ class IpaymuController extends Controller
             'imageUrl' => ['https://progesio.my.id/icon.png'],
             'returnUrl' => route('ipaymu.success'),
             'cancelUrl' => route('ipaymu.cancel'),
-            'notifyUrl' => route('ipaymu.notify').'?email=lag@g.com&amount='.$validatedData['price'].'&status=success',
+            'buyerEmail' => $request->buyerEmail,
+            'buyerName' => $request->buyerName,
+            'buyerPhone' => $request->buyerPhone,
+            'notifyUrl' => route('ipaymu.notify').'?atas_nama='.$request->buyerName.'&nomor='.$request->buyerPhone.'&email='.$request->buyerEmail,
         ];
 
         $jsonBody = json_encode($body, JSON_UNESCAPED_SLASHES);
@@ -64,9 +67,9 @@ class IpaymuController extends Controller
 
     public function notify(Request $request)
     {
-        // if($request->return=='true'){
-        Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=Terdapat Pembayaran Berhasil oleh '.$request->email .' dengan nominal '.$request->amount);
-        // }
+
+        Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=Terdapat Pembayaran Berhasil oleh '.$request->email .' dengan nomor WA '.$request->nomor.' dan atas nama '.$request->atas_nama.' dan status '.$request->return);
+
         return response()->json(['message' => 'Notification received.']);
     }
 }
