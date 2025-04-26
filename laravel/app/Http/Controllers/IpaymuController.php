@@ -68,7 +68,11 @@ class IpaymuController extends Controller
     public function notify(Request $request)
     {
 
-        Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=Terdapat Pembayaran Berhasil oleh '.$request->email .' dengan nomor WA '.$request->nomor.' dan atas nama '.$request->atas_nama);
+        try{
+            Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=Terdapat Pembayaran Berhasil oleh '.$request->email .' dengan nomor WA '.$request->nomor.' dan atas nama '.$request->atas_nama);
+        }catch(\Exception $e){
+            Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=ada transaksi masuk tapi error ----- '.            $e->getMessage());}
+
 
         return response()->json(['message' => 'Notification received.']);
     }
