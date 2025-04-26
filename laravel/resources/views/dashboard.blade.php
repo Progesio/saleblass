@@ -51,6 +51,11 @@
                     @endforeach
                 </tbody>
             </table>
+            <div class="col-12">
+                <div class="container">
+                    @include('Produk.blink')
+                </div>
+            </div>
         </div>
         <div class="tab-pane fade" id="documentation" role="tabpanel" aria-labelledby="documentation-tab">
             <h2 class="mt-3">API Usage Instructions</h2>
