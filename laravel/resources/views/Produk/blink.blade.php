@@ -76,7 +76,7 @@
             <div class='text-center'>
                 <h1>Welcome to Our Service</h1>
                 <p>Fill in your details and click the button below to proceed with the payment.</p>
-                <form method='POST' action='{{ route('ipaymu.purchase') }}'>
+                <form method='POST' action='{{ route('ipaymu.purchase') }}' class='w-50 mx-auto text-start'>
                     {{ csrf_field() }}
                     <input type='hidden' name='product' value='` + product + `'>
                     <input type='hidden' name='price' value='` + price + `'>

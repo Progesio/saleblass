@@ -6,7 +6,17 @@
     <title>Landing Page - Pilih Paket</title>
     <!-- Link ke Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{ url('bootstrap.min (1).css') }}">
+    <link rel="stylesheet" href="{{ url('blis.css') }}">
+    <style>
+        body {
+            background:url('https://progesio.my.id/HTML/images/hero-2-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            widows: 100dvh;
+            overflow-x: hidden;
+        }
+    </style>
 </head>
 <body class="container mt-5">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,9 +38,9 @@
         </div>
     </nav>
 
-    <div class="container">
-        <header class="text-center mb-4">
-            <h1>Selamat Datang di Progresio</h1>
+    <div class="container mt-5">
+        <header class="text-center mb-4 mt-5">
+            <h1 style="transform: scale(1.4)">Selamat Datang di Progresio</h1>
             <p>Pilih paket yang sesuai dengan kebutuhan Anda.</p>
         </header>
     </div>
