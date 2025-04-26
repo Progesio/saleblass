@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class TokenController extends Controller
 {
+
     public function useToken(Request $request)
     {
         $validator = Validator::make($request->all(), [
