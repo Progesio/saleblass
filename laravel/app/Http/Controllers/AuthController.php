@@ -31,6 +31,11 @@ class AuthController extends Controller
             'token_limit' => 10, // Default token limit
         ]);
 
+        // jika ada yang berhasil register kirim pesan notifikasi ke nomor 082111424592, ada user baru yang mendaftar
+        $nomor = '082111424592';
+        $pesan = 'Ada user baru yang mendaftar dengan email: ' . $validatedData['email'];
+        Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=' . $nomor . '&mass=' . $pesan);
+
         return redirect()->route('login')->with('success', 'Kamu sudah berhasil registrasi');
     }
 

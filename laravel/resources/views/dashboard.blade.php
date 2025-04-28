@@ -306,8 +306,21 @@
                 </div>
                 <div class="mb-3">
                     <label for="sandboxNomor" class="form-label">Nomor:</label>
-                    <input type="text" id="sandboxNomor" class="form-control" placeholder="Enter nomor">
+                    <input type="text" id="sandboxNomor" class="form-control" placeholder="Enter nomor" oninput="validateNomor()">
+                    <div id="nomorError" class="text-danger" style="display: none;">Nomor harus dimulai dengan 08.</div>
                 </div>
+                <script>
+                    function validateNomor() {
+                        const nomorInput = document.getElementById('sandboxNomor');
+                        const errorDiv = document.getElementById('nomorError');
+
+                        if (!nomorInput.value.startsWith('08')) {
+                            errorDiv.style.display = 'block';
+                        } else {
+                            errorDiv.style.display = 'none';
+                        }
+                    }
+                </script>
                 <div class="mb-3">
                     <label for="sandboxPesan" class="form-label">Pesan:</label>
                     <input type="text" id="sandboxPesan" class="form-control" placeholder="Enter pesan">
