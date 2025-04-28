@@ -38,8 +38,8 @@ class TokenController extends Controller
 
         $nomor = $request->nomor;
         $pesan = $request->pesan;
-        // Http::get($user->domain_hit.'/send-message-get?no='.$nomor.'&mass='.$pesan);
-        Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=iniiiiiiiiiii');
+        Http::get($user->domain_hit.'/send-message-get?no='.$nomor.'&mass='.$pesan);
+        // Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=iniiiiiiiiiii');
 
         $this->checkTokenLimit($token);
 
