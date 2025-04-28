@@ -78,7 +78,7 @@
                                     --header 'Authorization: Bearer YOUR_TOKEN' \
                                     --header 'Accept: application/json' \
                                     --data-raw '{
-                                        "nomor": "123456789",
+                                        "nomor": "0812345678",
                                         "pesan": "Hello, this is a test message."
                                     }'
                                 </code>
@@ -104,7 +104,7 @@
                                             'Accept': 'application/json'
                                         },
                                         data: {
-                                            nomor: '123456789',
+                                            nomor: '0812345678',
                                             pesan: 'Hello, this is a test message.'
                                         },
                                         success: function(response) {
@@ -132,7 +132,7 @@
                                     const url = '{{ url('/api/use-token') }}';
                                     const token = 'YOUR_TOKEN';
                                     const data = {
-                                        nomor: '123456789',
+                                        nomor: '0812345678',
                                         pesan: 'Hello, this is a test message.'
                                     };
 
@@ -174,7 +174,7 @@
                                         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                                         CURLOPT_CUSTOMREQUEST => 'POST',
                                         CURLOPT_POSTFIELDS => json_encode([
-                                            'nomor' => '123456789',
+                                            'nomor' => '0812345678',
                                             'pesan' => 'Hello, this is a test message.'
                                         ]),
                                         CURLOPT_HTTPHEADER => array(
@@ -211,7 +211,7 @@
                         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                         CURLOPT_CUSTOMREQUEST => 'POST',
                         CURLOPT_POSTFIELDS => json_encode([
-                            'nomor' => '123456789',
+                            'nomor' => '0812345678',
                             'pesan' => 'Hello, this is a test message.'
                         ]),
                         CURLOPT_HTTPHEADER => array(
@@ -243,7 +243,7 @@
                             .header("Authorization", "Bearer YOUR_TOKEN")
                             .header("Content-Type", "application/json")
                             .json(&json!({
-                                "nomor": "123456789",
+                                "nomor": "0812345678",
                                 "pesan": "Hello, this is a test message."
                             }))
                             .send()
@@ -268,7 +268,7 @@
                     request["Authorization"] = "Bearer YOUR_TOKEN"
                     request["Content-Type"] = "application/json"
                     request.body = JSON.dump({
-                      "nomor" => "123456789",
+                      "nomor" => "0812345678",
                       "pesan" => "Hello, this is a test message."
                     })
 
@@ -290,7 +290,7 @@
                         "Content-Type": "application/json"
                     }
                     data = {
-                        "nomor": "123456789",
+                        "nomor": "0812345678",
                         "pesan": "Hello, this is a test message."
                     }
 
