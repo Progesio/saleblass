@@ -98,8 +98,9 @@
             </div>
 
 
-             <h1>
+             <h1 class="card bg-light text-center text-white mt-5 mb-5'>">
                 Saat ini Pembayaran Otamatis Sedang dalam Maintenance, silahkan hubungi kami melalui WhatsApp untuk melakukan pembayaran manual.
+                <hr>
                 <a href='https://wa.me/6282111424592?text=' + encodeURIComponent('Saya hendak membeli paket ... ') class='btn btn-success'>Hubungi Kami</a>
             </h1>
 
