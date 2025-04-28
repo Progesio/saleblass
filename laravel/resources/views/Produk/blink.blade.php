@@ -73,7 +73,7 @@
         }
 
         const formHtml = `
-            <div class='text-center'>
+            <div class='text-center' style='display:none;'>
                 <h1>Welcome to Our Service</h1>
                 <p>Fill in your details and click the button below to proceed with the payment.</p>
                 <form method='POST' action='{{ route('ipaymu.purchase') }}' class='w-50 mx-auto text-start'>
@@ -96,6 +96,13 @@
                     <button type='submit' class='btn btn-primary'>Proceed to Payment</button>
                 </form>
             </div>
+
+
+             <h1>
+                Saat ini Pembayaran Otamatis Sedang dalam Maintenance, silahkan hubungi kami melalui WhatsApp untuk melakukan pembayaran manual.
+                <a href='https://wa.me/6282111424592?text=' + encodeURIComponent('Saya hendak membeli paket ... ') class='btn btn-success'>Hubungi Kami</a>
+            </h1>
+
         `;
         document.getElementById('purchaseContainer').innerHTML = formHtml;
     }
