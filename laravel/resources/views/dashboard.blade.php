@@ -325,7 +325,7 @@
             const endpoint = '/api/use-token';
             const token = document.getElementById('sandboxToken').value;
             const nomor = document.getElementById('sandboxNomor').value;
-            const pesan = document.getElementById('sandboxPesan').value;
+            const pesan = 'Pesan ini adalah percobaan sanbox dari {{url("/")}} '+document.getElementById('sandboxPesan').value;
 
             try {
                 const url = `${endpoint}?nomor=${encodeURIComponent(nomor)}&pesan=${encodeURIComponent(pesan)}`;
